@@ -13,7 +13,7 @@ export function ViteMpPlugin(): Plugin {
               [file
                 .split('/')
                 .slice(1)
-                .join('-')
+                .join('.')
                 .replace(/\.html$/, '')]: file,
             }),
             {}
