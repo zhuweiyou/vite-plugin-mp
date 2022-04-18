@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-mp",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "configure multi-pages applications and code splitting",
   "main": "index.js",
   "types": "index.d.ts",
@@ -31,6 +31,7 @@
     "vite": "^2.8.6"
   },
   "dependencies": {
-    "glob": "^7.2.0"
+    "glob": "^7.2.0",
+    "lodash": "^4.17.21"
   }
 }

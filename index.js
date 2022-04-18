@@ -2,10 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ViteMpPlugin = void 0;
 const glob = require("glob");
+const lodash_1 = require("lodash");
 function ViteMpPlugin() {
     return {
         name: 'vite-plugin-mp',
-        config: () => ({
+        config: c => (0, lodash_1.merge)({
             build: {
                 rollupOptions: {
                     input: glob.sync('src/**/*.html').reduce((obj, file) => ({
@@ -25,7 +26,7 @@ function ViteMpPlugin() {
                     },
                 },
             },
-        }),
+        }, c),
     };
 }
 exports.ViteMpPlugin = ViteMpPlugin;
