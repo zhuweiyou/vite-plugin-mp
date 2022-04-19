@@ -1,6 +1,9 @@
 import { Plugin } from 'vite'
 import * as glob from 'glob'
 import { merge } from 'lodash'
+import { resolve } from 'path'
+
+const r = s => resolve(process.cwd(), s)
 
 export function ViteMpPlugin(): Plugin {
   return {
@@ -8,7 +11,16 @@ export function ViteMpPlugin(): Plugin {
     config: c =>
       merge(
         {
+          root: 'src',
+          resolve: {
+            alias: {
+              '@': r('src'),
+            },
+          },
+          publicDir: r('public'),
           build: {
+            emptyOutDir: true,
+            outDir: r('dist'),
             rollupOptions: {
               input: glob.sync('src/**/*.html').reduce(
                 (obj, file) => ({
