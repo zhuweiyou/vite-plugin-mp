@@ -1,6 +1,6 @@
 # vite-plugin-mp
 
-configure multi-pages applications and code splitting
+Configure multi-pages applications and code splitting
 
 ## Usage
 
@@ -16,6 +16,19 @@ import { ViteMpPlugin } from 'vite-plugin-mp'
 export default defineConfig({
   plugins: [ViteMpPlugin()],
 })
+```
+
+add `jsconfig.json` or `tsconfig.json` in your project
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}
 ```
 
 ## Example

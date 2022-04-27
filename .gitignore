@@ -2,3 +2,4 @@ node_modules
 .DS_Store
 .idea
 example/dist
+example/package-lock.json

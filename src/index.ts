@@ -1,26 +1,26 @@
 import { Plugin } from 'vite'
-import * as glob from 'glob'
+import glob from 'glob'
+import path from 'path'
 import { merge } from 'lodash'
-import { resolve } from 'path'
 
-const r = s => resolve(process.cwd(), s)
+const resolve = filePath => path.resolve(process.cwd(), filePath)
 
 export function ViteMpPlugin(): Plugin {
   return {
     name: 'vite-plugin-mp',
-    config: c =>
+    config: otherConfig =>
       merge(
         {
           root: 'src',
           resolve: {
             alias: {
-              '@': r('src'),
+              '@': resolve('src'),
             },
           },
-          publicDir: r('public'),
+          publicDir: resolve('public'),
           build: {
             emptyOutDir: true,
-            outDir: r('dist'),
+            outDir: resolve('dist'),
             rollupOptions: {
               input: glob.sync('src/**/*.html').reduce(
                 (obj, file) => ({
@@ -56,7 +56,7 @@ export function ViteMpPlugin(): Plugin {
             },
           },
         },
-        c
+        otherConfig
       ),
   }
 }
