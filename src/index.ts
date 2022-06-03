@@ -2,7 +2,7 @@ import { Plugin, mergeConfig } from 'vite'
 import { resolve } from 'path'
 import glob from 'glob'
 
-const r = pathSegments => resolve(process.cwd(), pathSegments)
+const r = (p: string) => resolve(process.cwd(), p)
 
 export function ViteMpPlugin(): Plugin {
   return {
@@ -59,3 +59,5 @@ export function ViteMpPlugin(): Plugin {
       ),
   }
 }
+
+export default ViteMpPlugin

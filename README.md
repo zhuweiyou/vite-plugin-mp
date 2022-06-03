@@ -11,10 +11,10 @@ npm install vite-plugin-mp -D
 ```js
 // vite.config.js
 import { defineConfig } from 'vite'
-import { ViteMpPlugin } from 'vite-plugin-mp'
+import mp from 'vite-plugin-mp'
 
 export default defineConfig({
-  plugins: [ViteMpPlugin()],
+  plugins: [mp()],
 })
 ```
 
