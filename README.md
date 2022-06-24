@@ -31,6 +31,8 @@ add `jsconfig.json` or `tsconfig.json` to your project
 }
 ```
 
+> or `"src/*": ["src/*"]`
+
 ## Example
 
 See [example](https://github.com/zhuweiyou/vite-plugin-mp/tree/master/example) and <https://zhuweiyou.github.io/vite-plugin-mp/>

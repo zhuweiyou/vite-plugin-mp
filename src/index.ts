@@ -14,6 +14,7 @@ export function ViteMpPlugin(): Plugin {
           resolve: {
             alias: {
               '@': r('src'),
+              src: r('src'),
             },
           },
           publicDir: r('public'),
@@ -32,26 +33,6 @@ export function ViteMpPlugin(): Plugin {
                 }),
                 {}
               ),
-              output: {
-                manualChunks: (id, { getModuleInfo }) => {
-                  if (
-                    [
-                      'commonjsHelpers.js',
-                      '\x00commonjsHelpers.js',
-                      'vite/modulepreload-polyfill',
-                    ].includes(id)
-                  ) {
-                    return 'runtime'
-                  }
-
-                  if (
-                    id.includes('/node_modules/') &&
-                    getModuleInfo(id).importers.length > 1
-                  ) {
-                    return id.split('node_modules/')[1].split('/')[0]
-                  }
-                },
-              },
             },
           },
         },
