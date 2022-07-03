@@ -25,13 +25,13 @@ add `jsconfig.json` or `tsconfig.json` to your project
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"],
+      "src/*": ["./src/*"]
     }
-  }
+  },
+  "include": ["src"]
 }
 ```
-
-> or `"src/*": ["src/*"]`
 
 ## Example
 
