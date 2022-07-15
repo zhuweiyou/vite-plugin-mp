@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-mp",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Configure multi-pages applications and code splitting",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -34,6 +34,6 @@
     "glob": "^8.0.3"
   },
   "peerDependencies": {
-    "vite": "^2.9.9"
+    "vite": "*"
   }
 }
