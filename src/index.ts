@@ -1,4 +1,4 @@
-import { Plugin, mergeConfig } from 'vite'
+import { Plugin, mergeConfig, splitVendorChunkPlugin } from 'vite'
 import { resolve } from 'path'
 import glob from 'glob'
 
@@ -18,6 +18,7 @@ export function ViteMpPlugin(): Plugin {
             },
           },
           publicDir: r('public'),
+          plugins: [splitVendorChunkPlugin()],
           build: {
             emptyOutDir: true,
             outDir: r('dist'),
