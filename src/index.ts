@@ -7,8 +7,8 @@ const r = (p: string) => resolve(process.cwd(), p)
 export function ViteMpPlugin(): Plugin {
   return {
     name: 'vite-plugin-mp',
-    config: userConfig =>
-      mergeConfig(
+    config: userConfig => {
+      const newConfig = mergeConfig(
         {
           root: 'src',
           resolve: {
@@ -18,7 +18,6 @@ export function ViteMpPlugin(): Plugin {
             },
           },
           publicDir: r('public'),
-          plugins: [splitVendorChunkPlugin()],
           build: {
             emptyOutDir: true,
             outDir: r('dist'),
@@ -38,7 +37,13 @@ export function ViteMpPlugin(): Plugin {
           },
         },
         userConfig
-      ),
+      )
+      if (!newConfig.plugins) {
+        newConfig.plugins = []
+      }
+      newConfig.plugins.push(splitVendorChunkPlugin())
+      return newConfig
+    },
   }
 }
 
