@@ -12,7 +12,7 @@
     "@vitejs/plugin-vue": "^3.0.1",
     "vite": "^3.0.2",
     "vite-plugin-minify": "^1.4.3",
-    "vite-plugin-mp": "^2.2.2"
+    "vite-plugin-mp": "^2.2.3"
   },
   "dependencies": {
     "react": "^18.2.0",
