@@ -33,6 +33,18 @@ add `jsconfig.json` or `tsconfig.json` to your project
 }
 ```
 
+if you want to force extract `node_modules` for `vendor`, you can import `splitVendorChunkPlugin`
+
+```js
+// vite.config.js
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import mp from 'vite-plugin-mp'
+
+export default defineConfig({
+  plugins: [mp(), splitVendorChunkPlugin()],
+})
+```
+
 ## Example
 
 See [example](https://github.com/zhuweiyou/vite-plugin-mp/tree/master/example) and <https://zhuweiyou.github.io/vite-plugin-mp/>
