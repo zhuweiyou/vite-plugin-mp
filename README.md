@@ -11,10 +11,10 @@ npm install vite-plugin-mp -D
 ```js
 // vite.config.js
 import { defineConfig } from 'vite'
-import mp from 'vite-plugin-mp'
+import { ViteMpPlugin } from 'vite-plugin-mp'
 
 export default defineConfig({
-  plugins: [mp()],
+  plugins: [ViteMpPlugin()],
 })
 ```
 
@@ -38,10 +38,10 @@ if you want to force extract `node_modules` for `vendor`, you can import `splitV
 ```js
 // vite.config.js
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import mp from 'vite-plugin-mp'
+import { ViteMpPlugin } from 'vite-plugin-mp'
 
 export default defineConfig({
-  plugins: [mp(), splitVendorChunkPlugin()],
+  plugins: [ViteMpPlugin(), splitVendorChunkPlugin()],
 })
 ```
 
@@ -51,4 +51,4 @@ See [example](https://github.com/zhuweiyou/vite-plugin-mp/tree/master/example) a
 
 ## Other Plugins
 
-- [vite-plugin-minify](https://github.com/zhuweiyou/vite-plugin-minify) - minify html in production
+- [vite-plugin-minify](https://github.com/zhuweiyou/vite-plugin-minify) - Minify html in production
